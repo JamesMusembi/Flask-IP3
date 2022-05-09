@@ -1,0 +1,89 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<div class="custom-banner">
+  <div class="container py-2 py-md-5">
+    <h1 class="text-center">Pitch title</h1>
+    <p class="text-center">Pitch line</p>
+    <p class="text-center">
+      <span>Category: </span>
+      <span class="ms-3 text-capitalize">Business</span>
+    </p>
+    <div class="actions text-center">
+      <button class="btn outline-none border-none shadow-none bg-white">
+        <span>
+          Upvote
+        </span>
+        <span class="ms-3">
+          <i class="fa-solid fa-angle-up"></i>
+        </span>
+        <span class="ms-3">
+          20
+        </span>
+      </button>
+      <button class="btn outline-none border-none shadow-none bg-white">
+        <span>
+          Downvote
+        </span>
+        <span class="ms-3">
+          <i class="fa-solid fa-angle-down"></i>
+        </span>
+        <span class="ms-3">
+          20
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="container my-4">
+
+  <div class="card custom-card">
+    <h3 class="text-center">Comments</h3>
+  </div>
+
+  <div class="comments my-4">
+    <div class="comment card custom-card p-2">
+      <div class="comment-header d-flex align-items-center">
+        <div class="comment-header-left me-2">
+          <img src="https://via.placeholder.com/50" alt="">
+        </div>
+        <div class="comment-header-right">
+          <h4>John Doe</h4>
+          <p>
+            <span>Posted on: </span>
+            <span>12/12/2019</span>
+          </p>
+        </div>
+      </div>
+      <div class="comment-body">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="form">
+    <div class="card custom-card p-2">
+      <h3 class="text-center">Leave a comment</h3>
+      <form action="">
+        <div class="form-group">
+          <label for="">Comment</label>
+          <textarea name="" id="" rows="5"
+            class="form-control input-lg mt-2 text-white bg-none shadow-none custom-input"></textarea>
+        </div>
+        <div class="form-group mt-2">
+          <button class="btn btn-primary custom-btn">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
