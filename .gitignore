@@ -1,5 +1,5 @@
-.env
-.vscode/
-*.pcy
-__pycache__/
-.__pycache__/
+# .env
+# .vscode/
+# *.pcy
+# __pycache__/
+# .__pycache__/
