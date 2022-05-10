@@ -1,15 +1,19 @@
 import os
 
-from flask import Config
+class Config:
 
-class Confif:
-    SQLAlchemy_DATABASE_URI=os.getenv('DATABASE_URL')
-    DEBUG=os.getenv('DEBUG')
+    DATABASE_URI = 'sqlite:///site.db'
+
+
 class ProdConfig(Config):
-    pass
+    DEBUG = False
+
+
 class DevConfig(Config):
-    pass
-config_options={
-    'development':DevConfig,
-    'production':ProdConfig
+    DEBUG = True
+
+config_options = {
+'development':DevConfig,
+'production':ProdConfig
 }
+
