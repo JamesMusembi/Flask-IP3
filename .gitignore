@@ -1,4 +1,4 @@
-.virtual
+virtual/
 .vscode/
 *.pcy
 __pycache__/
