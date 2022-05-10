@@ -1,0 +1,83 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<div class="custom-banner">
+  <div class="container py-2 py-md-5">
+    <h1 class="text-center">James Musembi</h1>
+    <p class="text-center">And some bio here</p>
+  </div>
+</div>
+
+<div class="container my-4 py-5">
+
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="h-100">
+        <div class="custom-card p-2 position-relative h-100">
+          <ul class="list-group list-group-flush d-flex flex-column" id="myTab" role="tablist">
+            <li class="list-group-item custom-item" role="presentation">
+              <button class="btn shadow-none active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                type="button" role="tab" aria-controls="home" aria-selected="true">
+                <i class="fas fa-angle-right me-2"></i>
+                <span>My Pitches</span>
+              </button>
+            </li>
+            <li class="list-group-item custom-item" role="presentation">
+              <button class="btn shadow-none" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                type="button" role="tab" aria-controls="profile" aria-selected="false">
+                <i class="fas fa-angle-right me-2"></i>
+                <span>My Comments</span>
+              </button>
+            </li>
+            <li class="list-group-item custom-item" role="presentation">
+              <button class="btn shadow-none" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
+                type="button" role="tab" aria-controls="contact" aria-selected="false">
+                <i class="fas fa-angle-right me-2"></i>
+                <span>Profile</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8 mb-3">
+
+      <div>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="card custom-card p-2 mb-3">
+              <h2 class="text-center">My Pitches</h2>
+            </div>
+            <div class="card custom-card p-2">
+              {% include './components/pitcheslist.html' %}
+            </div>
+          </div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="card custom-card p-2 mb-3">
+              <h2 class="text-center">My Comments</h2>
+            </div>
+            <div class="card custom-card p-2">
+              My Comments
+            </div>
+          </div>
+          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            <div class="card custom-card p-2 mb-3">
+              <h2 class="text-center">My Profile</h2>
+            </div>
+            <div class="card custom-card p-2">
+              Profile
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}
