@@ -4,7 +4,7 @@
 
 <div class="custom-banner">
   <div class="container py-2 py-md-5">
-    <h1 class="text-center">Login</h1>
+    <h1 class="text-center">Login - {{current_user.username}}</h1>
     <p class="text-center">Login to your account for full access</p>
   </div>
 </div>
@@ -17,9 +17,9 @@
         <hr>
         <form action="{{ url_for('main.login') }}" method="POST">
           <div class="form-group">
-            <label for="email">Email address</label>
-            <input type="email" class="form-control input-lg mt-2 text-white bg-none shadow-none custom-input"
-              id="email" name="email" placeholder="Enter email">
+            <label for="email">Username</label>
+            <input type="text" class="form-control input-lg mt-2 text-white bg-none shadow-none custom-input" id="email"
+              name="username" placeholder="Enter email">
           </div>
           <div class="form-group mt-4">
             <label for="password">Password</label>
@@ -30,6 +30,9 @@
             <button type="submit" class="btn btn-primary btn-block  custom-btn w-100">Login</button>
           </div>
         </form>
+
+        {% include './components/messages.html' %}
+
       </div>
     </div>
   </div>
