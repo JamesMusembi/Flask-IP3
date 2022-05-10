@@ -4,8 +4,8 @@
 
 <div class="custom-banner">
   <div class="container py-2 py-md-5">
-    <h1 class="text-center">React to Pitches</h1>
-    <p class="text-center">Give your view about other peoples pitches</p>
+    <h1 class="text-center text-capitalize">React to {{category.name}} Pitches</h1>
+    <p class=" text-center">Give your view about other peoples pitches</p>
   </div>
 </div>
 
@@ -20,99 +20,33 @@
           <hr>
           <ul class="list-group list-group-flush">
             <li class="list-group-item custom-item">
-              <a href="#">
+              <a href="{{ url_for('main.index') }}">
                 <i class="fas fa-angle-right me-2"></i>
                 <span>All</span>
               </a>
             </li>
+            {% for category in categories %}
             <li class="list-group-item custom-item">
-              <a href="#">
+              <a href="{{ url_for('main.category_view', category_id=category.id) }}">
                 <i class="fas fa-angle-right me-2"></i>
-                <span>Web Development</span>
+                <span>{{category.name}}</span>
               </a>
             </li>
-            <li class="list-group-item custom-item">
-              <a href="#">
-                <i class="fas fa-angle-right me-2"></i>
-                <span>Mobile Development</span>
-              </a>
-            </li>
-            <li class="list-group-item custom-item">
-              <a href="#">
-                <i class="fas fa-angle-right me-2"></i>
-                <span>Data Science</span>
-              </a>
-            </li>
-            <li class="list-group-item custom-item">
-              <a href="#">
-                <i class="fas fa-angle-right me-2"></i>
-                <span>Machine Learning</span>
-              </a>
-            </li>
+            {% endfor %}
           </ul>
         </div>
       </div>
     </div>
 
     <div class="col-md-8 mb-3">
+
       <div class="custom-card p-2 position-relative mb-3">
-        <h4 class="text-center p-0 m-0">All Pitches</h4>
+        <h4 class="text-center p-0 m-0">{{category.name}}</h4>
       </div>
       <div class="">
-        <div class="custom-card p-2 position-relative">
-
-          <div class="custom-card-header">
-            <p class="m-0 p-0 text-capitalize">
-              category
-            </p>
-            <h3 class="">Pick Up Pitch</h3>
-          </div>
-          <div class="custom-card-body">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium, ipsam. Doloribus explicabo
-              nostrum
-              exercitationem! Eius ullam aut laborum optio odio.
-            </p>
-            <div>
-              By Dalmas Ogembo
-            </div>
-          </div>
-          <div class="custom-card-footer d-flex mt-3">
-            <div class="action">
-              <button class="btn outline-none border-none shadow-none">
-                <span>
-                  <i class="fa-solid fa-comment"></i>
-                </span>
-                <span class="ms-3">
-                  20
-                </span>
-              </button>
-            </div>
-            <div class="action">
-              <button class="btn outline-none border-none shadow-none">
-                <span>
-                  <i class="fa-solid fa-angle-up"></i>
-                </span>
-                <span class="ms-3">
-                  20
-                </span>
-              </button>
-
-            </div>
-            <div class="action">
-              <button class="btn outline-none border-none shadow-none">
-                <span>
-                  <i class="fa-solid fa-angle-down"></i>
-                </span>
-                <span class="ms-3">
-                  20
-                </span>
-              </button>
-            </div>
-          </div>
-
-        </div>
+        {% include './components/pitcheslist.html' %}
       </div>
+
     </div>
 
   </div>
