@@ -1,0 +1,65 @@
+{% for pitch in pitches %}
+<div class="custom-card p-2 position-relative mb-4">
+
+  <div class="custom-card-header">
+    <p class="m-0 p-0 text-capitalize">
+      {{pitch.category.name}}
+    </p>
+    <h3 class="">{{pitch.title}}</h3>
+  </div>
+  <div class="custom-card-body">
+    <p>
+      {{pitch.content}}
+    </p>
+    <div>
+      By {{pitch.user.fullname}}
+    </div>
+  </div>
+  <div class="custom-card-footer d-flex mt-3">
+    <div class="action">
+      <a href="{{ url_for('main.pitch_view', pitch_id=pitch.id) }}">
+        <button class="btn outline-none border-none shadow-none">
+          <span>
+            <i class="fa-solid fa-comment"></i>
+          </span>
+          <span class="ms-3">
+            {{pitch.comments}}
+          </span>
+        </button>
+      </a>
+    </div>
+    <div class="action">
+      <a href="{{ url_for('main.upvote_pitch', pitch_id=pitch.id) }}">
+        <button class="btn outline-none border-none shadow-none">
+          <span>
+            <i class="fa-solid fa-angle-up"></i>
+          </span>
+          <span class="ms-3">
+            {{pitch.upvotes}}
+          </span>
+        </button>
+      </a>
+    </div>
+    <div class="action">
+      <a href="{{ url_for('main.downvote_pitch', pitch_id=pitch.id) }}">
+        <button class="btn outline-none border-none shadow-none">
+          <span>
+            <i class="fa-solid fa-angle-down"></i>
+          </span>
+          <span class="ms-3">
+            {{pitch.downvotes}}
+          </span>
+        </button>
+      </a>
+    </div>
+  </div>
+
+</div>
+{% endfor %}
+{% if pitches|length == 0 %}
+<div class="alert alert-info p-3">
+  <p class="m-0 p-0">
+    No pitches found
+  </p>
+</div>
+{% endif %}
