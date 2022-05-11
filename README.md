@@ -18,8 +18,8 @@
   Run project through ./start.sh after changing the code 
 
 ## Technologies used 
- python 
- Flask
+ 1. python 
+ 2. Flask
 
 ## Setup/instructions
 ### Requirements 
