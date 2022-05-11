@@ -25,7 +25,10 @@
 ### Requirements 
 1. Get the project through git clone ,or if you are unable to clone this repository you can download the zip
 2. Ensure that you have complete file
-3. 
+3. Navigate to the app folder which is in the root folder of the application.
+4. You need computer or phone and be able to access internet.
+
+
 
 
 ## License
