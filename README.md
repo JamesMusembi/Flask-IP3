@@ -2,10 +2,12 @@
 # by James Musembi
 
 # Table of content
- + .[Description].(#description)
- + .[DevelopmentServer].(#./start.sh)
- + .[TechnologiesUsed].(#technologiesused)
- + .[Setup/instructions/installation]
++ [Description](#description)
++ [Development server](#start.sh)
++ [Technology Used](#technology-used)
++ [Reference](#reference)
++ [License](#license-Copyright)
++ [Authors Info](#author-Info/contacts)
 
 # Description
  this is application that allows users to submit one minute pitches and other user will vote for them and post comment
