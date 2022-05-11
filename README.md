@@ -18,7 +18,7 @@
   Run project through ./start.sh after changing the code 
 
 ## Technologies used 
- python 3.9 
+ python 
  Flask
 
 ## Setup/instructions
