@@ -6,7 +6,7 @@
 + [Description](#description)
 + [Development server](#start.sh)
 + [Technology Used](#technology-used)
-+ [Setup instructions] (#setup-instruction)
++ [Setup instructions](#setup-instruction)
 + [Reference](#reference)
 + [License](#license-Copyright)
 + [Authors Info](#author-Info/contacts)
