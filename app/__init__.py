@@ -19,7 +19,7 @@ def create_app(config_name):
     app.config.from_object(config_options[config_name])
 
     # Database settings
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+    # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SECRET_KEY'] = 'WL)/Yn:X`rr0XX}2>1|{'
 

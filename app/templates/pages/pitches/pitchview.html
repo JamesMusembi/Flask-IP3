@@ -1,0 +1,96 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<div class="custom-banner">
+  <div class="container py-2 py-md-5">
+    <h1 class="text-center">{{pitch.title}}</h1>
+    <p class="text-center">{{pitch.content}}</p>
+    <p class="text-center">
+      <span>Category: </span>
+      <span class="ms-3 text-capitalize">{{pitch.category.name}}</span>
+    </p>
+    <p class="text-center">By: {{user.fullname}}</p>
+    <div class="actions text-center">
+      <a href="{{ url_for('main.upvote_pitch', pitch_id=pitch.id) }}">
+        <button class="btn outline-none border-none shadow-none bg-white">
+          <span>
+            Upvote
+          </span>
+          <span class="ms-3">
+            <i class="fa-solid fa-angle-up"></i>
+          </span>
+          <span class="ms-3">
+            {{pitch.upvotes}}
+          </span>
+        </button>
+      </a>
+      <a href="{{ url_for('main.downvote_pitch', pitch_id=pitch.id) }}">
+        <button class="btn outline-none border-none shadow-none bg-white">
+          <span>
+            Downvote
+          </span>
+          <span class="ms-3">
+            <i class="fa-solid fa-angle-down"></i>
+          </span>
+          <span class="ms-3">
+            {{pitch.downvotes}}
+          </span>
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container my-4">
+
+  <div class="card custom-card">
+    <h3 class="text-center">Comments</h3>
+  </div>
+
+  <div class="comments my-4">
+
+    {% for comment in comments %}
+    <div class="comment card custom-card p-2 mb-4">
+      <div class="comment-header d-flex align-items-center">
+        <div class="comment-header-left me-2">
+          <img src="https://via.placeholder.com/50" alt="">
+        </div>
+        <div class="comment-header-right">
+          <h4>{{comment.user.fullname}}</h4>
+          <p>
+            <span>Posted on: </span>
+            <span>{{comment.created_at.date()}}</span>
+          </p>
+        </div>
+      </div>
+      <div class="comment-body">
+        <p>
+          {{comment.content}}
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+
+  <div class="form">
+    <div class="card custom-card p-2">
+      <h3 class="text-center">Leave a comment</h3>
+      <form action="{{ url_for('main.add_comment', pitch_id=pitch.id) }}" method="post">
+        <div class="form-group">
+          <label for="">Comment</label>
+          <textarea id="" rows="5" class="form-control input-lg mt-2 text-white bg-none shadow-none custom-input"
+            name="comment"></textarea>
+        </div>
+        <div class="form-group mt-2">
+          <button class="btn btn-primary custom-btn">Submit</button>
+        </div>
+      </form>
+      {% include './components/messages.html' %}
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
