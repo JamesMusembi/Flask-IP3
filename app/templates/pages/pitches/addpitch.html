@@ -18,12 +18,12 @@
         <form action="{{ url_for('main.new_pitch') }}" method="POST">
           <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" class="form-control input-lg mt-2 text-white bg-none shadow-none custom-input" id="title"
+            <input type="text" class="form-control input-lg mt-2 bg-none shadow-none custom-input" id="title"
               name="title" placeholder="Enter Title">
           </div>
           <div class="form-group mt-4">
             <label for="category">Category</label>
-            <select required class="form-select input-lg mt-2 text-white bg-none shadow-none custom-input" id="category"
+            <select required class="form-select input-lg mt-2 bg-none shadow-none custom-input" id="category"
               name="category">
               <option value="">Select Category</option>
               {% for category in categories %}
@@ -34,7 +34,7 @@
           <div class="form-group mt-4">
             <label for="">Content</label>
             <textarea name="content" id="" rows="5"
-              class="form-control input-lg mt-2 text-white bg-none shadow-none custom-input"></textarea>
+              class="form-control input-lg mt-2 bg-none shadow-none custom-input"></textarea>
           </div>
           <div class="form-group mt-4">
             <button type="submit" class="btn btn-primary btn-block  custom-btn w-100">Post Pitch</button>
