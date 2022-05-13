@@ -10,7 +10,7 @@ class Config:
     # DEBUG = False
 
 class ProdConfig(Config):
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:james@localhost/pitches'
     DEBUG = False
     
 
